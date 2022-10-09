@@ -14,12 +14,6 @@ chunk = 8
 for n in range(delay):
     q.put(np.zeros([chunk,1],dtype = "f"))
 
-#def callback(indata,outdata,frames,time,status):
-#    if status:
-#        print(status)
-#    print(len(indata))
-#    outdata[:]=indata
-
 mic = sd.Stream(samplerate=fs,blocksize=chunk, dtype='float32',channels=1)#,callback=callback)
 with mic:
     while True:
