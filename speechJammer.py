@@ -1,8 +1,13 @@
 import sounddevice as sd
 import numpy as np
 import queue
+import argparse
 
-delay = 1000
+parser = argparse.ArgumentParser()
+parser.add_argument('delay', type = int)
+args = parser.parse_args()
+
+delay = args.delay
 q = queue.Queue()
 fs = 8000
 chunk = 8
